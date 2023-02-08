@@ -20,12 +20,12 @@ module.exports = {
         const facts = [
             `Le ciel est bleu. <@${randomUser.id}> est con.`,
             `La terre est plate. <@${randomUser.id}> aussi.`,
-            `<@${randomUser.id}> est un gay refoulé.`,
+            `<@${randomUser.id}> est gay et refoulé.`,
             `<@${randomUser.id}> se travesti le samedi soir.`,
-            `<@${randomUser.id}> est différent.`,
+            `<@${randomUser.id}> est une personne différente.`,
             `<@${randomUser.id}> aime <@${randomUser2.id}>.`,
             `<@${randomUser.id}> est hétéro. (ça reste à prouver)`,
-            `<@${randomUser.id}> est raciste. (il a raison)`,
+            `<@${randomUser.id}> est raciste.`,
             `<@${randomUser.id}> est beaucoup trop sympa.`,
             `<@${randomUser.id}> est un pédophile recherché par le secrétariat.`];
 

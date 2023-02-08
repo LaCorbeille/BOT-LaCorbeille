@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, Events } = require('discord.js');
 
 // BADWORDS
 const badwords = [
@@ -20,10 +21,23 @@ module.exports = async (bot, message) => {
     if(message.content.toLowerCase().includes('lgbt')||message.content.toLowerCase().includes('gay')) {
         message.reply(':rainbow:');
     } 
-    // RANDOM BADWORD
+    // RANDOM BADWORD or RICKROLL
     if (Math.random() < 0.1) {
-        let randomIndex = Math.floor(Math.random() * badwords.length);
-        message.reply(badwords[randomIndex]);
+        if(Math.random() < 0.1) {
+            // RICKROLL
+            const row = new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder()
+                    .setLabel('le bouton.')
+                    .setStyle(ButtonStyle.Link)
+                    .setURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
+            );    
+            await message.reply({ content: 'Je pense que tu ne devrais pas toucher', components: [row] });
+        } else {
+            // BADWORD
+            let randomIndex = Math.floor(Math.random() * badwords.length);
+            message.reply(badwords[randomIndex]);
+        }
     } else {
         if (message.content.toLowerCase().endsWith('quoi')) {
             if (Math.random() < 0.1) {

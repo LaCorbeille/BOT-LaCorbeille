@@ -6,6 +6,7 @@ module.exports = async (bot, member) => {
     console.error(`[La Corbeille - guildMemberAdd] Le canal par défaut n'a pas été trouvé pour le membre ${member.user.username}`);
     return;
   } else {
-    channel.send(`Bienvenue sur le serveur, ${member}! \nhttps://tenor.com/view/welcome-welcome-to-the-team-minions-gif-21749603`);
+    channel.send(`Bienvenue sur le serveur, ${member}!`);
+    channel.send(`https://tenor.com/view/welcome-welcome-to-the-team-minions-gif-21749603`);
   }
 }

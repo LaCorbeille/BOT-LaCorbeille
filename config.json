@@ -1,5 +1,10 @@
 {
-    "token":"?????????",
+    "token":"YOUR DISCORD BOT TOKEN",
     "color":"#00bd97" ,
-    "intents":3276799
+    "intents":3276799,
+    "status":"idle",
+    "activity":"/help",
+    "presence":"WATCHING",
+    "username":"La Corbeille",
+    "avatar":"./icon.webp"
 }
