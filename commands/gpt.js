@@ -26,7 +26,7 @@ module.exports = {
         }, {
             headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer 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`,
+            "Authorization": `Bearer YOUR OPEN AI API KEY`,
             },
         })
         .then((response) => {
