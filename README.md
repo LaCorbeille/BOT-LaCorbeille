@@ -3,6 +3,7 @@
     <img src="https://skillicons.dev/icons?i=discord,bots" id="skills" style="margin-left: 20px;">
 </div>
 
+## Description :
 La Corbeille is a simple bot discord. Find the community discord: https://discord.gg/hmPzS4k
 
 ## Setting up the bot :
