@@ -14,3 +14,4 @@ To configure the bot, fill in the token field in config.json. https://github.com
 - gpt.js
 - norris.js
 - pfc.js
+- translate.js
