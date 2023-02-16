@@ -1,6 +1,6 @@
 <div style="display: flex;">
     <h1>BOT La Corbeille</h1>
-    <img src="https://skillicons.dev/icons?i=discord,bots" id="skills" style="margin-left: 20px;">
+    <img src="https://skillicons.dev/icons?i=discord,bots,js" id="skills" style="margin-left: 20px;">
 </div>
 
 ## Description :
