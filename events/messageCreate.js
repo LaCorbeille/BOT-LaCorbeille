@@ -28,13 +28,5 @@ module.exports = async (bot, message) => {
             let randomIndex = Math.floor(Math.random() * gifList.length);
             message.reply(gifList[randomIndex]);
         }
-    } else {
-        if (message.content.toLowerCase().endsWith('quoi')) {
-            if (Math.random() < 0.1) {
-                message.reply('QUOICOUBEH!');
-            } else {
-                message.reply('feur.');
-            }
-        } 
     }
 }
