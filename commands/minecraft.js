@@ -27,6 +27,7 @@ module.exports = {
                     { name: "IP accessible depuis l'IUT", value: ip+":80", inline: true },
                     { name: "Version du serveur", value: data.server.name, inline: false },
                     { name: "Statut du serveur", value: data.online ? "En ligne :green_circle:" : "Hors ligne :red_circle:", inline: true },
+                    { name: "Latence", value: data.duration, inline: false},
                     { name: "Joueurs en ligne", value: `${data.players.now} / ${data.players.max}`, inline: true }
                 )
                 .setTimestamp()
