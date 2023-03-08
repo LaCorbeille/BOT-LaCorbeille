@@ -16,6 +16,7 @@ module.exports = {
             let res = await axios.get(`https://mcapi.us/server/status?ip=${ip}`);
             let data = res.data;
             let Embed = new Discord.EmbedBuilder();
+            let durationInMillis = Math.floor(data.duration / 1000000);
                         
             if (data.online) {
                 Embed.setColor(bot.color)
@@ -26,8 +27,8 @@ module.exports = {
                     { name: "IP du serveur", value: ip, inline: true },
                     { name: "IP accessible depuis l'IUT", value: ip+":80", inline: true },
                     { name: "Version du serveur", value: data.server.name, inline: false },
-                    { name: "Statut du serveur", value: data.online ? "En ligne :green_circle:" : "Hors ligne :red_circle:", inline: true },
-                    { name: "Latence", value: data.duration/1000000, inline: false},
+                    { name: "Statut du serveur", value: data.online ? "En ligne :green_circle:" : "Hors ligne :red_circle:", inline: true},
+                    { name: "Latence", value: durationInMillis+"ms", inline: true},
                     { name: "Joueurs en ligne", value: `${data.players.now} / ${data.players.max}`, inline: true }
                 )
                 .setTimestamp()
