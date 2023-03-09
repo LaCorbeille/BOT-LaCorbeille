@@ -16,7 +16,7 @@ module.exports = {
             let res = await axios.get(`https://mcapi.us/server/status?ip=${ip}`);
             let data = res.data;
             let Embed = new Discord.EmbedBuilder();
-            let durationInMillis = Math.floor(data.duration / 1000000);
+            let durationInMillis = Math.floor(data.duration / 10000000);
                         
             if (data.online) {
                 Embed.setColor(bot.color)
