@@ -2,7 +2,7 @@
     "token":"YOUR DISCORD BOT TOKEN",
     "color":"#00bd97" ,
     "intents":3276799,
-    "status":"idle",
+    "status":"online",
     "activity":"/help",
     "presence":"WATCHING",
     "username":"La Corbeille",
