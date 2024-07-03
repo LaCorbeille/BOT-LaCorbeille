@@ -22,5 +22,5 @@ module.exports = async bot => {
     const rest = new REST({version: "10"}).setToken(bot.token);
 
     await rest.put(Routes.applicationCommands(bot.user.id), {body: commands});
-    console.log("[La Corbeille - loadSlashCommands] les slashCommands sont crées avec succès !");
+    console.log("[LaCorbeille - loadSlashCommands] les slashCommands sont crées avec succès !");
 }

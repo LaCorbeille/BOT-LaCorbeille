@@ -4,7 +4,7 @@ const axios = require("axios");
 
 module.exports = {
     name: "minecraft",
-    description: "Affiche les infos du serveur minecraft La Corbeille.",
+    description: "Affiche les infos du serveur minecraft LaCorbeille.",
     permission: "Aucune",
     dm: true,
     category: "Information",
@@ -20,7 +20,7 @@ module.exports = {
                         
             if (data.online) {
                 Embed.setColor(bot.color)
-                .setTitle("Serveur Minecraft La Corbeille")
+                .setTitle("Serveur Minecraft LaCorbeille")
                 .setThumbnail(bot.user.displayAvatarURL({dynamic: true}))
                 .setDescription(`Status :`)
                 .addFields(
@@ -35,7 +35,7 @@ module.exports = {
                 .setFooter({text: "API : mcapi.us"});
             } else {
                 Embed.setColor(bot.color)
-                .setTitle("Serveur Minecraft La Corbeille")
+                .setTitle("Serveur Minecraft LaCorbeille")
                 .setThumbnail(bot.user.displayAvatarURL({dynamic: true}))
                 .setDescription(`Status :`)
                 .addFields(
