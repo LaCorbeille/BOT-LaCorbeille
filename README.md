@@ -4,10 +4,10 @@
 </div>
 
 ## Description :
-LaCorbeille is a simple bot discord. Find the community discord: https://discord.gg/hmPzS4k
+LaCorbeille is a simple bot discord. Find the community [here](https://discord.gg/hmPzS4k)
 
 ## Setting up the bot :
-To configure the bot, fill in the token field in config.json. https://github.com/YoruKiwi/BOT-La-Corbeille/blob/main/config.json
+To configure the bot, fill in the token field in [config.json](https://github.com/YoruKiwi/BOT-La-Corbeille/blob/main/config.json)
 
 ## Usage :
 Run it with ```node index.js```
