@@ -1,4 +1,4 @@
-// TODO : Auto subt remettre la photo de base
+// TODO : Subtiliser le pseudo d'un membre
 const Discord = require("discord.js");
 const config = require("../config.json");
 
