@@ -1,4 +1,6 @@
+// TODO : Auto subt remettre la photo de base
 const Discord = require("discord.js");
+const config = require("../config.json");
 
 module.exports = {
     name: "subtiliser",
@@ -20,6 +22,7 @@ module.exports = {
         if(!user) return message.reply("Pas de membre à subtiliser !");
         if(user == bot.user) {
             message.reply(`Je vais subtiliser un être parfait.`);
+            await bot.user.setAvatar(config.avatar);
         } else {
             try {
                 await bot.user.setAvatar(user.avatarURL({ format: 'png', dynamic: true, size: 2048 }));  
