@@ -11,7 +11,7 @@ LaCorbeille is a simple bot discord. Find the community [here](https://discord.g
 
 ## Setting up the bot
 1. Clone the repository: ```git clone https://github.com/LaCorbeille/BOT-La-Corbeille.git```
-2. Fill in the token field in [config.json](https://github.com/YoruKiwi/BOT-La-Corbeille/blob/main/config.json) with your Discord bot token.
+2. Fill in the token field in [config.json](https://github.com/YoruKiwi/BOT-LaCorbeille/blob/main/config.json) with your Discord bot token.
 3. Navigate to the directory where you cloned the bot.
 4. Build the Docker containers: ```docker-compose build```
 5. Start the Docker containers in detached mode: ```docker-compose up -d```
