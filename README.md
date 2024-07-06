@@ -1,6 +1,6 @@
 # BOT - LaCorbeille
 
-<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=discord,bots,js,github,githubactions,vscode"/></a>
+<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=discord,bots,vscode,js,nodejs,github,githubactions"/></a>
 
 LaCorbeille is a simple bot discord. Find the community [here](https://discord.gg/hmPzS4k)
 
