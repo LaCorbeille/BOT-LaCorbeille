@@ -1,15 +1,22 @@
-<div style="display: flex;">
-    <h1>BOT LaCorbeille</h1>
-    <img src="https://skillicons.dev/icons?i=discord,bots,js" id="skills" style="margin-left: 20px;">
-</div>
+# BOT - LaCorbeille
 
-## Description :
+<a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=discord,bots,js,github,githubactions,vscode"/></a>
+
 LaCorbeille is a simple bot discord. Find the community [here](https://discord.gg/hmPzS4k)
 
-## Setting up the bot :
-To configure the bot, fill in the token field in [config.json](https://github.com/YoruKiwi/BOT-La-Corbeille/blob/main/config.json)
+## Requirements
+- Docker
+- Node.js
+- Create a Discord application and obtain the bot token from [Discord Developers](https://discord.com/developers/applications).
 
-## Usage :
-Run it with ```node index.js```
+## Setting up the bot
+1. Clone the repository: ```git clone https://github.com/LaCorbeille/BOT-La-Corbeille.git```
+2. Fill in the token field in [config.json](https://github.com/YoruKiwi/BOT-La-Corbeille/blob/main/config.json) with your Discord bot token.
+3. Navigate to the directory where you cloned the bot.
+4. Build the Docker containers: ```docker-compose build```
+5. Start the Docker containers in detached mode: ```docker-compose up -d```
+6. Verify if the container is created correctly: ```docker ps -a```
+7. Check the logs for any issues: ```docker logs -f <container-id>```
 
-Type /help to get help on a server
+## Usage
+Type ```/help``` to get help on a server
