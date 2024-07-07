@@ -13,17 +13,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       
-    - name: Install SFTP client
-      run: sudo apt-get install -y openssh-client
-      
+    - name: Install SFTP and sshpass
+      run: sudo apt-get update && sudo apt-get install -y openssh-client sshpass
+
     - name: Upload files via SFTP
-      run: |
-        sshpass -p ${{ secrets.SFTP_PASSWORD }} sftp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:/pathToRemoteDirectory <<EOF
-        put -r ./*
-        quit
-        EOF
       env:
         SFTP_SERVER: ${{ secrets.SFTP_SERVER }}
         SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
         SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+      run: |
+        sshpass -p "${{ secrets.SFTP_PASSWORD }}" sftp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:/pathToRemoteDirectory <<EOF
+        put -r ./*
+        quit
+        EOF
