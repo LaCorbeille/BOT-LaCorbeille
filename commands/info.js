@@ -1,5 +1,3 @@
-// TODO : Info command to display information about the bot (version, author, website, etc.)
-
 const Discord = require("discord.js");
 const fs = require("fs");
 
@@ -23,7 +21,7 @@ module.exports = {
                         `### GitHub : [LaCorbeille - BOT](https://github.com/LaCorbeille/BOT-La-Corbeille)\n` +
                         `### Discord : [LaCorbeille](https://discord.gg/hmPzS4k)`)
         .setTimestamp()
-        .setFooter({text: "Version "+version});
+        .setFooter({text: "Version "+version+` | Ping ${bot.ws.ping}ms`+"\n© LaCorbeille STUDIO 2024"});
 
         await message.reply({embeds: [Embed]});
     }
