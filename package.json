@@ -17,6 +17,7 @@
     "blob-to-buffer": "^1.2.9",
     "data-uri-to-blob": "^0.0.4",
     "discord.js": "^14.7.1",
+    "dotenv": "^16.4.5",
     "fs": "^0.0.1-security"
   }
 }
