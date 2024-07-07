@@ -13,15 +13,26 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       
-    - name: Install rsync and sshpass
-      run: sudo apt-get update && sudo apt-get install -y rsync sshpass
+    - name: Install SFTP and sshpass
+      run: sudo apt-get update && sudo apt-get install -y openssh-client sshpass
 
-    - name: Upload files via rsync
+    - name: Create remote directory if it does not exist
       env:
         SFTP_SERVER: ${{ secrets.SFTP_SERVER }}
         SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
         SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
       run: |
-        sshpass -p "${{ secrets.SFTP_PASSWORD }}" rsync -avz --delete --rsh="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" ./ \
-        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:/home/lacorbeille/LaCorbeilleDiscordBOT
-        
+        sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} "mkdir -p /home/lacorbeille/LaCorbeilleDiscordBOT"
+
+    - name: Upload files via SFTP
+      env:
+        SFTP_SERVER: ${{ secrets.SFTP_SERVER }}
+        SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+        SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+      run: |
+        sshpass -p "${{ secrets.SFTP_PASSWORD }}" sftp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:/home/lacorbeille/LaCorbeilleDiscordBOT <<EOF
+        put -r ./*
+        quit
+        EOF
