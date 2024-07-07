@@ -28,14 +28,14 @@ jobs:
         quit
         EOF
 
-    - name: Stop Docker container
+    - name: Stop and remove Docker container
       env:
         SFTP_SERVER: ${{ secrets.SFTP_SERVER }}
         SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
         SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
       run: |
         sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} "docker stop lacorbeille-discordbot"
+        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} "docker stop lacorbeille-discordbot || true && docker rm lacorbeille-discordbot || true"
 
     - name: Rebuild and run Docker container
       env:
