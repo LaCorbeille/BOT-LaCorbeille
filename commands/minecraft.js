@@ -25,7 +25,6 @@ module.exports = {
                 .setDescription(`Status :`)
                 .addFields(
                     { name: "IP du serveur", value: ip, inline: true },
-                    { name: "IP accessible depuis l'IUT", value: ip+":80", inline: true },
                     { name: "Version du serveur", value: data.server.name, inline: false },
                     { name: "Statut du serveur", value: data.online ? "En ligne :green_circle:" : "Hors ligne :red_circle:", inline: true},
                     { name: "Latence", value: durationInMillis+"ms", inline: true},
@@ -40,7 +39,6 @@ module.exports = {
                 .setDescription(`Status :`)
                 .addFields(
                     { name: "IP du serveur", value: ip, inline: true },
-                    { name: "IP accessible depuis l'IUT", value: ip+":80", inline: true },
                     { name: "Statut du serveur", value: data.online ? "En ligne :green_circle:" : "Hors ligne :red_circle:", inline: false }
                 )
                 .setTimestamp()
