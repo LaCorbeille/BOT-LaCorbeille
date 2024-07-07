@@ -11,12 +11,12 @@ LaCorbeille is a simple bot discord. Find the community [here](https://discord.g
 
 ## Setting up the bot
 1. Clone the repository: ```git clone https://github.com/LaCorbeille/BOT-La-Corbeille.git```
-2. Fill in the token field in [config.json](https://github.com/YoruKiwi/BOT-LaCorbeille/blob/main/config.json) with your Discord bot token.
-3. Navigate to the directory where you cloned the bot.
-4. Build the Docker containers: ```docker-compose build```
-5. Start the Docker containers in detached mode: ```docker-compose up -d```
-6. Verify if the container is created correctly: ```docker ps -a```
-7. Check the logs for any issues: ```docker logs -f <container-id>```
+2. Create a .env file and add a field ```DISCORD_TOKEN=``` followed by your Discord bot token.
+4. Navigate to the directory where you cloned the bot.
+5. Build the Docker containers: ```docker-compose build```
+6. Start the Docker containers in detached mode: ```docker-compose up -d```
+7. Verify if the container is created correctly: ```docker ps -a```
+8. Check the logs for any issues: ```docker logs -f <container-id>```
 
 ## Usage
 Type ```/help``` to get help on a server
