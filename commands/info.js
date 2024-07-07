@@ -17,14 +17,13 @@ module.exports = {
         .setColor(bot.color)
         .setTitle(`Informations sur LaCorbeille ✨`)
         .setThumbnail(bot.user.displayAvatarURL({dynamic: true}))
-        .setDescription(`## Hallo :D\n` +
-                        `### Version : ${version}\n` +
+        .setDescription(`## Hallo :D ✨\n` +
                         `### Auteur : [Noa Second](https://gravatar.com/noasecond)\n` +
                         `### Site : [LaCorbeille STUDIO](https://lacorbeille.studio)\n` +
                         `### GitHub : [LaCorbeille - BOT](https://github.com/LaCorbeille/BOT-La-Corbeille)\n` +
                         `### Discord : [LaCorbeille](https://discord.gg/hmPzS4k)`)
         .setTimestamp()
-        .setFooter({text: "Informations sur LaCorbeille"});
+        .setFooter({text: "Version "+version});
 
         await message.reply({embeds: [Embed]});
     }
