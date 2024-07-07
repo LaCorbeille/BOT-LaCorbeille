@@ -35,7 +35,7 @@ jobs:
         SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
       run: |
         sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} "sudo docker stop lacorbeille-discordbot"
+        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} "docker stop lacorbeille-discordbot"
 
     - name: Rebuild and run Docker container
       env:
@@ -44,4 +44,4 @@ jobs:
         SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
       run: |
         sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} "cd /home/lacorbeille/LaCorbeilleDiscordBOT && sudo docker-compose down && sudo docker-compose build && sudo docker-compose up -d"
+        ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }} "cd /home/lacorbeille/LaCorbeilleDiscordBOT && docker-compose down && docker-compose build && docker-compose up -d"
