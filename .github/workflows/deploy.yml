@@ -24,3 +24,4 @@ jobs:
       run: |
         sshpass -p "${{ secrets.SFTP_PASSWORD }}" rsync -avz --delete --rsh="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" ./ \
         ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_SERVER }}:/home/lacorbeille/LaCorbeilleDiscordBOT
+        
