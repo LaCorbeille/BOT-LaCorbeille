@@ -9,6 +9,8 @@ bot.config = config;
 bot.commands = new Discord.Collection();
 bot.color = config.color;
 
-bot.login(config.token);
+require('dotenv').config();
+bot.login(process.env.DISCORD_TOKEN);
+
 loadCommands(bot);
 loadEvents(bot);
