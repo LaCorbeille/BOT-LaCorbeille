@@ -15,7 +15,7 @@ module.exports = async bot => {
         //console.error(error);
         console.log(`[LaCorbeille - ready] Impossible de changer l'avatar.`);
     }
-    
+
     try {
         await bot.user.setUsername(config.username);
     } catch (error) {
@@ -26,14 +26,28 @@ module.exports = async bot => {
     // Alert users when bot is ready
     const guild = bot.guilds.cache.get("411196282124894208");
     const version = fs.readFileSync("./VERSION", "utf-8").trim();
-    if (guild) {
-        const channel = guild.channels.cache.get("411196282124894210");
-        if (channel && channel.isTextBased()) {
-            channel.send(`Le bot a été mis à jour vers la version ${version} !`);
-        } else {
-            console.log(`[LaCorbeille - ready] Impossible de trouver le salon.`);
-        }
+
+    // Check if the file PREVIOUS_VERSION exists
+    try {
+        fs.accessSync("./PREVIOUS_VERSION", fs.constants.F_OK);
+    } catch (error) {
+        fs.writeFileSync("./PREVIOUS_VERSION", version, "utf-8");
+    }
+
+    const previousVersion = fs.readFileSync("./PREVIOUS_VERSION", "utf-8").trim();
+
+    if (version === previousVersion) {
+        console.log(`[LaCorbeille - ready] Le bot est déjà à jour (version ${version}).`);
     } else {
-        console.log(`[LaCorbeille - ready] Impossible de trouver le serveur.`);
+        if (guild) {
+            const channel = guild.channels.cache.get("411196282124894210");
+            if (channel && channel.isTextBased()) {
+                channel.send(`Le bot a été mis à jour vers la version ${version} !`);
+            } else {
+                console.log(`[LaCorbeille - ready] Impossible de trouver le salon.`);
+            }
+        } else {
+            console.log(`[LaCorbeille - ready] Impossible de trouver le serveur.`);
+        }
     }
 }
