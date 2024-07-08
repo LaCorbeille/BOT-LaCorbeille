@@ -10,7 +10,7 @@ module.exports = {
     category: "Information",
 
     async run(bot, message, args) {
-        let ip = "87.90.5.157";
+        let ip = "mc.lacorbeille.studio";
 
         try {
             let res = await axios.get(`https://mcapi.us/server/status?ip=${ip}`);
