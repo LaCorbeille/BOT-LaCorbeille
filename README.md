@@ -2,7 +2,11 @@
 
 <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=discord,bots,vscode,js,nodejs,docker,github,githubactions"/></a>
 
-LaCorbeille is a simple bot discord. Find the community [here](https://discord.gg/hmPzS4k)
+LaCorbeille is a simple bot discord.
+<br>
+Find the community [here](https://discord.gg/hmPzS4k)
+<br>
+Or go to LaCorbeille STUDIO [website](https://lacorbeille.studio) !
 
 <img src="https://img.shields.io/github/actions/workflow/status/LaCorbeille/BOT-LaCorbeille/deploy.yml?label=Deploy" />
 
