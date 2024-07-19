@@ -32,14 +32,8 @@ module.exports = {
             const response = await axios.get(apiUrl);
             const data = response.data;
 
-            let Embed = new Discord.EmbedBuilder()
-                .setColor(bot.color)
-                .setTitle(`Analyse Whois ${JSON.stringify(data.WhoisRecord.domainName)}`)
-                .setTimestamp()
-                .setFooter({text: "API : whoisxmlapi.com"});
-
-                // FOR IPV4
-                for (const [key, value] of Object.entries(data.WhoisRecord.registryData.registrant)) {
+            function addFieldsToEmbed(target, Embed) {
+                for (const [key, value] of Object.entries(target)) {
                     if (typeof value === 'object' && value !== null && key !== 'rawText') {
                         for (const [subKey, subValue] of Object.entries(value)) {
                             Embed.addFields(
@@ -52,6 +46,30 @@ module.exports = {
                         );
                     }
                 }
+            }
+
+            let Embed = new Discord.EmbedBuilder()
+                .setColor(bot.color)
+                .setTitle(`Analyse Whois ${JSON.stringify(data.WhoisRecord.domainName)}`)
+                .addFields(
+                    { name: "Nom du registrar", value: JSON.stringify(data.WhoisRecord.registrarName) }
+                )
+                .setTimestamp()
+                .setFooter({text: "API : whoisxmlapi.com"});
+
+                let target;
+
+                // FOR DOMAIN
+                target = data.WhoisRecord.registrant;
+                if(target !== undefined && target !== null) {
+                    addFieldsToEmbed(target, Embed);
+                }
+
+                // FOR IPV4 OR IPV6
+                target = data.WhoisRecord.registryData.registrant;
+                if(target !== undefined && target !== null) {
+                    addFieldsToEmbed(target, Embed);
+                }    
 
                 Embed.addFields({ name: "Plus d'infos sur", value: `[${ip}](https://www.whois.com/whois/${ip})`});
 
