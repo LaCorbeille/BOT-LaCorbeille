@@ -43,6 +43,7 @@ module.exports = async bot => {
             const channel = guild.channels.cache.get("411196282124894210");
             if (channel && channel.isTextBased()) {
                 channel.send(`Le bot a été mis à jour vers la version ${version} !`);
+                fs.writeFileSync("./PREVIOUS_VERSION", version, "utf-8");
             } else {
                 console.log(`[LaCorbeille - ready] Impossible de trouver le salon.`);
             }
