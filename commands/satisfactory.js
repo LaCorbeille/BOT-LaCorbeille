@@ -14,40 +14,18 @@ module.exports = {
         let port = "7777";
 
         try {
-            // let res = await axios.get(`https://?/server/status?ip=${ip}`);
-            // let data = res.data;
-            // let Embed = new Discord.EmbedBuilder();
-            // let durationInMillis = Math.floor(data.duration / 10000000);
-                        
-            if (data.online) {
-                Embed.setColor(bot.color)
+            Embed.setColor(bot.color)
                 .setTitle("Serveur Satisfactory LaCorbeille")
-                .setThumbnail(bot.user.displayAvatarURL({dynamic: true}))
+                .setThumbnail(bot.user.displayAvatarURL({ dynamic: true }))
                 .setDescription(`Status :`)
                 .addFields(
                     { name: "IP du serveur", value: ip, inline: true },
                     { name: "Port du serveur", value: port, inline: true }
-                    // { name: "Version du serveur", value: data.server.name, inline: false },
-                    // { name: "Statut du serveur", value: data.online ? "En ligne :green_circle:" : "Hors ligne :red_circle:", inline: true},
-                    // { name: "Latence", value: durationInMillis+"ms", inline: true},
-                    // { name: "Joueurs en ligne", value: `${data.players.now} / ${data.players.max}`, inline: true }
                 )
                 .setTimestamp()
-                .setFooter({text: "Satisfactory"});
-            } else {
-                Embed.setColor(bot.color)
-                .setTitle("Serveur Satisfactory LaCorbeille")
-                .setThumbnail(bot.user.displayAvatarURL({dynamic: true}))
-                .setDescription(`Status :`)
-                .addFields(
-                    // { name: "IP du serveur", value: ip, inline: true },
-                    // { name: "Statut du serveur", value: data.online ? "En ligne :green_circle:" : "Hors ligne :red_circle:", inline: false }
-                )
-                .setTimestamp()
-                .setFooter({text: "Satisfactory"});
-            }            
-            
-            await message.reply({embeds: [Embed]})
+                .setFooter({ text: "Satisfactory" });
+                
+            await message.reply({ embeds: [Embed] })
         } catch (error) {
             console.error(error);
             message.reply("Le serveur semble être éteint.");
