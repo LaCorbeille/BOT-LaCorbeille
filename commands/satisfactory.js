@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const axios = require("axios");
 
 
 module.exports = {
@@ -14,6 +13,7 @@ module.exports = {
         let port = "7777";
 
         try {
+            let Embed = new Discord.EmbedBuilder();
             Embed.setColor(bot.color)
                 .setTitle("Serveur Satisfactory LaCorbeille")
                 .setThumbnail(bot.user.displayAvatarURL({ dynamic: true }))
