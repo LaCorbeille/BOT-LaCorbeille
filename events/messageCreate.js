@@ -3,7 +3,7 @@ const { ActionRowBuilder, ButtonBuilder, ButtonStyle, Events } = require('discor
 
 module.exports = async (bot, message) => {
     // RANDOM RICKROLL
-    if(Math.random() < 0.0025) {
+    if(Math.random() < 0.001) {
         const row = new ActionRowBuilder()
         .addComponents(
             new ButtonBuilder()
