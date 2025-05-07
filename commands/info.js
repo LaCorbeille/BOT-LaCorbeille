@@ -16,7 +16,7 @@ module.exports = {
         .setTitle(`Informations sur LaCorbeille ✨`)
         .setThumbnail(bot.user.displayAvatarURL({dynamic: true}))
         .setDescription(`## Hallo :D ✨\n` +
-                        `### Auteur : [Noa Second](https://gravatar.com/noasecond)\n` +
+                        `### Auteur : [Noa Second](https:/noasecond.com)\n` +
                         `### Site : [LaCorbeille STUDIO](https://lacorbeille.studio)\n` +
                         `### GitHub : [LaCorbeille - BOT](https://github.com/LaCorbeille/BOT-La-Corbeille)\n` +
                         `### Discord : [LaCorbeille](https://discord.gg/hmPzS4k)`)
